@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure Agg Demo</title>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename = 'main.js') }}"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'styles.css') }}"
+    />
+  </head>
+  <body>
+    <div id="form">
+      <form>
+        <label for="name">What's your name?</label>
+        <input type="text" id="name" name="name" placeholder="Ephelia" />
+        <label for="private-value"
+          >Enter your private value (must be an integer):</label
+        >
+        <input
+          type="text"
+          id="private-value"
+          name="private-value"
+          placeholder="42"
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="loading-div" style="display: none">
+      <h2 style="margin-bottom: 0px">
+        Thanks for submitting your private value!
+      </h2>
+      <p>We'll be sure to keep it safe. 🔐</p>
+      <br />
+      <p>
+        Waiting to compute the aggregate until enough clients respond. Please do
+        not refresh the page...
+      </p>
+      <div class="loader"></div>
+      <div id="loading-text" style="font-style: italic">
+        Getting ready to perform crypto magic...
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+</html>

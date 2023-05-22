@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aggregate Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'result_styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>The aggregate sum is:</h1>
+    <h1 id="agg">{{aggregate}}</h1>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script>
+      const jsConfetti = new JSConfetti();
+
+      // Call addConfetti() method to display confetti
+      jsConfetti.addConfetti();
+      window.setInterval(() => {
+        jsConfetti.addConfetti({
+          emojis: ["🌈", "✨", "💫", "🔑", "🤖"],
+        });
+      }, 3000);
+    </script>
+  </body>
+</html>
